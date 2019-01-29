@@ -11,7 +11,7 @@ namespace CodeSquirl.RecipeApp.DataProvider
 {
     public class ProductRepository : IRepository<ProductDTO>
     {
-        private const string SELECT_ALL = @"SELECT * FROM [CodeSquirl].[Product]";
+        private const string SELECT_ALL = "SELECT * FROM \"CodeSquirl\".\"Product\"";
         private const string INSERT = "INSERT INTO \"CodeSquirl\".\"Product\"(\"UniqueID\", \"Name\", \"Type\", \"Perishable\", \"Deleted\") VALUES (@UniqueID, @Name, @Type, @Perishable, @Deleted)"; 
 
         private readonly IDbConnection _connection;
@@ -51,8 +51,11 @@ namespace CodeSquirl.RecipeApp.DataProvider
             try 
             {
                 _connection.Open();
-
                 return _connection.Query<ProductDTO>(SELECT_ALL).ToList();
+            }
+            catch(Exception)
+            {
+                throw;
             }
             finally
             {
