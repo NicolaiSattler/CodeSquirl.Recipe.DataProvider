@@ -1,7 +1,7 @@
 using System;
-using CodeSquirl.System;
+using CodeSquirrel.System;
 
-namespace CodeSquirl.RecipeApp.DataProvider
+namespace CodeSquirrel.RecipeApp.DataProvider
 {
     public class PreparationDTO : Entity, IPreparationDTO
     {

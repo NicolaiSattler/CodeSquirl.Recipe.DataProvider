@@ -1,0 +1,3 @@
+namespace CodeSquirrel.RecipeApp.DataProvider
+{
+}

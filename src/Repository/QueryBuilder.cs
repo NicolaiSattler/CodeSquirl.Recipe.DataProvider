@@ -1,4 +1,4 @@
-namespace CodeSquirl.RecipeApp.DataProvider
+namespace CodeSquirrel.RecipeApp.DataProvider
 {
     public class QueryBuilder
     {

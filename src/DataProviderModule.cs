@@ -1,9 +1,9 @@
 using System.Data;
 using Autofac;
-using CodeSquirl.System;
+using CodeSquirrel.System;
 using Npgsql;
 
-namespace CodeSquirl.RecipeApp.DataProvider
+namespace CodeSquirrel.RecipeApp.DataProvider
 {
     public class DataProviderModule : Module
     {

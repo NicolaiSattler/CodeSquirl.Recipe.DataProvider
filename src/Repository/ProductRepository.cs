@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using CodeSquirl.System;
+using CodeSquirrel.System;
 using Dapper;
 
-namespace CodeSquirl.RecipeApp.DataProvider
+namespace CodeSquirrel.RecipeApp.DataProvider
 {
     public class ProductRepository : IRepository<ProductDTO>
     {

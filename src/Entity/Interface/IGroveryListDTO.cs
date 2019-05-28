@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using CodeSquirl.System;
+using CodeSquirrel.System;
 
-namespace CodeSquirl.RecipeApp.DataProvider
+namespace CodeSquirrel.RecipeApp.DataProvider
 {
     public interface IGroceryListDTO : IEntity
     {

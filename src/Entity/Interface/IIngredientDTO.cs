@@ -1,11 +1,11 @@
 using System;
-using CodeSquirl.System;
+using CodeSquirrel.System;
 
-namespace CodeSquirl.RecipeApp.DataProvider
+namespace CodeSquirrel.RecipeApp.DataProvider
 {
     public interface IIngredientDTO : IEntity
     {
         Guid ProductID { get; set; }
-        Guid AmountID { get; set; }
+        Guid UnitID { get; set; }
     }
 }

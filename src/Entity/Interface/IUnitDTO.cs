@@ -1,8 +1,8 @@
 using System;
-using CodeSquirl.RecipeApp.Model;
-using CodeSquirl.System;
+using CodeSquirrel.RecipeApp.Model;
+using CodeSquirrel.System;
 
-namespace CodeSquirl.RecipeApp.DataProvider
+namespace CodeSquirrel.RecipeApp.DataProvider
 {
     public interface IUnitDTO : IEntity
     {

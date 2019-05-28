@@ -1,12 +1,12 @@
 using System;
-using CodeSquirl.RecipeApp.Model;
-using CodeSquirl.System;
+using CodeSquirrel.RecipeApp.Model;
+using CodeSquirrel.System;
 
-namespace CodeSquirl.RecipeApp.DataProvider
+namespace CodeSquirrel.RecipeApp.DataProvider
 {
     public class DayPlanDTO : Entity, IDayPlanDTO
     {
-        public int Weeknumber { get; set; }
+        public Guid GroceryListID { get; set; }
         public DayName Name { get; set; }
 
         public DayPlanDTO()
