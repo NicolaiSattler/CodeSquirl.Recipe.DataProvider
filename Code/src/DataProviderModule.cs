@@ -21,6 +21,7 @@ namespace CodeSquirrel.RecipeApp.DataProvider
             builder.RegisterType<RecipeDTO>();
 
             builder.RegisterType<ProductRepository>().As<IRepository<ProductDTO>>();
+            builder.RegisterType<NecessityRepository>().As<IRepository<NecessityDTO>>();
         }
     }
 }
