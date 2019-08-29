@@ -16,8 +16,8 @@ namespace CodeSquirrel.RecipeApp.DataProvider
         private const string INSERT = "INSERT INTO \"CodeSquirrel\".\"Necessity\" " + 
                                       "(\"UniqueID\", \"Name\", \"Description\", \"Electrical\", \"Deleted\")" + 
                                       "VALUES (@UniqueID, @Name, @Description, @Electrical, @Deleted)";
-        private const string UPDATE = "UPDATE \"CodeSquirl\".\"Necessity\" SET (\"Name\" = @Name," +
-                                      "\"Description\" = @Description, \"Electrical\" = @Electrical, \"Deleted\" = @Deleted) " + 
+        private const string UPDATE = "UPDATE \"CodeSquirrel\".\"Necessity\" SET \"Name\" = @Name," +
+                                      "\"Description\" = @Description, \"Electrical\" = @Electrical, \"Deleted\" = @Deleted " + 
                                       "WHERE \"UniqueID\" = @UniqueID";
 
         private readonly IDbConnection _connection;
