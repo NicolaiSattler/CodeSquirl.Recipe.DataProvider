@@ -1,7 +1,5 @@
-using System.Data;
 using Autofac;
 using CodeSquirrel.System;
-using Npgsql;
 
 namespace CodeSquirrel.RecipeApp.DataProvider
 {
@@ -22,6 +20,8 @@ namespace CodeSquirrel.RecipeApp.DataProvider
 
             builder.RegisterType<ProductRepository>().As<IRepository<ProductDTO>>();
             builder.RegisterType<NecessityRepository>().As<IRepository<NecessityDTO>>();
+            builder.RegisterType<RecipeRepository>().As<IRepository<RecipeDTO>>();
+            builder.RegisterType<UnitRepository>().As<IRepository<UnitDTO>>();
         }
     }
 }

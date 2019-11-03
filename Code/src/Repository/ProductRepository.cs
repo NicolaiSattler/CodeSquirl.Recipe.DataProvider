@@ -36,7 +36,7 @@ namespace CodeSquirrel.RecipeApp.DataProvider
 
         private object[] GetParameters(IList<ProductDTO> entities)
         {
-            var length = entities?.Count() ?? 0;
+            var length = entities?.Count ?? 0;
             var result = new object[length];
 
             for (var i = 0; i < length; i++)
@@ -97,10 +97,9 @@ namespace CodeSquirrel.RecipeApp.DataProvider
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred while adding multiple products.", entities);
-                
                 transaction.Rollback();
 
+                _logger.LogError(ex, "An error occurred while adding multiple products.", entities);
                 _logger.LogInformation("Insertion of all new products has been cancelled.");    
 
                 return false;            
@@ -156,8 +155,8 @@ namespace CodeSquirrel.RecipeApp.DataProvider
             catch(Exception ex)
             {
                 _logger.LogError(ex, "An error occurred while retrieving all products.");
-                
-                return new List<ProductDTO>();
+
+                return null;
             }
             finally
             {
@@ -217,13 +216,13 @@ namespace CodeSquirrel.RecipeApp.DataProvider
             catch(Exception ex)
             {
                 _logger.LogError(ex, "An error occurred while trying to remove a product", uniqueID);
-                throw;
+                return false;
             }
             finally
             {
                 _connection.Close();
                 _connection.Dispose();
-            }
+            } 
         }
 
         public bool Update(ProductDTO entity)

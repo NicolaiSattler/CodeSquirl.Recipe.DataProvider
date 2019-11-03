@@ -11,7 +11,7 @@ namespace CodeSquirrel.RecipeApp.DataProvider
         public string Name { get; set; }
         public RecipeType Type { get; set; }
         public DietType Diet { get; set; }
-        public TimeSpan Duration { get; }
+        public int Duration { get; }
         public bool AllowRemnants { get; set; }
 
         public RecipeDTO()
