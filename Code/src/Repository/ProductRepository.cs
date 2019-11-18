@@ -34,26 +34,14 @@ namespace CodeSquirrel.RecipeApp.DataProvider
             Builder = new QueryBuilder(TABLE_NAME);
         }
 
-        private object[] GetParameters(IList<ProductDTO> entities)
+        private object[] GetParameters(IList<ProductDTO> entities) => entities.Select(item => new
         {
-            var length = entities?.Count ?? 0;
-            var result = new object[length];
-
-            for (var i = 0; i < length; i++)
-            {
-                var item = entities[i];
-                result[i] = new 
-                {
-                    item.UniqueID,
-                    item.Name,
-                    item.Type,
-                    item.Perishable, 
-                    item.Deleted
-                };
-            }
-
-            return result;
-        }
+            item.UniqueID,
+            item.Name,
+            item.Type,
+            item.Perishable,
+            item.Deleted
+        }).ToArray();
 
         public bool Add(ProductDTO entity)
         {

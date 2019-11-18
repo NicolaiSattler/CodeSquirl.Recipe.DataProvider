@@ -16,7 +16,7 @@ namespace CodeSquirrel.RecipeApp.DataProvider
                                       "VALUES (@UniqueID, @Name, @Type, @Diet, @AllowRemnants, @UserID, @Duration, @Deleted) ";
         private const string UPDATE = "UPDATE\"CodeSquirrel\".\"Recipe\"" +
                                       "SET \"UniqueID\" = @UniqueID, \"Name\" = @Name, \"Type\" = @Type, \"Diet\" = @Diet, " +
-                                      "\"AllowRemnants\" = @AllowRemnants, \"UserID\" = @UserID, \"Duration\" = @Duration, \"Deleted\" = @Deleted" +
+                                      "\"AllowRemnants\" = @AllowRemnants, \"UserID\" = @UserID, \"Duration\" = @Duration, \"Deleted\" = @Deleted " +
                                       "WHERE \"UniqueID\" = @UniqueID";
 
         private readonly IDbConnection _connection;
@@ -32,29 +32,17 @@ namespace CodeSquirrel.RecipeApp.DataProvider
             Builder = new QueryBuilder(TABLE_NAME);
         }
 
-        private object[] GetParameters(IList<RecipeDTO> entities)
+        private object[] GetParameters(IList<RecipeDTO> entities) => entities.Select(item => new
         {
-            var length = entities?.Count ?? 0;
-            var result = new object[length];
-
-            for (int i = 0; i < length; i++)
-            {
-                var item = entities[i];
-                result[i] = new
-                {
-                    item.UniqueID,
-                    item.Name,
-                    item.Type,
-                    item.Diet,
-                    item.AllowRemnants,
-                    item.UserID,
-                    item.Duration,
-                    item.Deleted
-                };
-            }
-
-            return result;
-        }
+            item.UniqueID,
+            item.Name,
+            item.Type,
+            item.Diet,
+            item.AllowRemnants,
+            item.UserID,
+            item.Duration,
+            item.Deleted
+        }).ToArray();
 
         public bool Add(RecipeDTO entity)
         {
