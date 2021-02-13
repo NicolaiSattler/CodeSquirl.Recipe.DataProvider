@@ -34,7 +34,7 @@ namespace CodeSquirrel.RecipeApp.DataProvider
             Builder = new QueryBuilder(TABLE_NAME);
         }
 
-        private object[] GetParameters(IList<ProductDTO> entities) => entities.Select(item => new
+        private object[] GetParameters(IEnumerable<ProductDTO> entities) => entities.Select(item => new
         {
             item.UniqueID,
             item.Name,
@@ -68,7 +68,7 @@ namespace CodeSquirrel.RecipeApp.DataProvider
                 _connection.Dispose();
             }
         }
-        public bool AddRange(IList<ProductDTO> entities)
+        public bool AddRange(IEnumerable<ProductDTO> entities)
         {
             var transaction = _connection.BeginTransaction();
 

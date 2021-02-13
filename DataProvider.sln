@@ -11,9 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{FC23FCA0-8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataProvider.Test", "Test\DataProvider.Test.csproj", "{5E2C13C2-C310-47D3-A4A7-83C166F8125E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeSquirrel.RecipeApp.Model", "..\CodeSquirrel.RecipeApp.Model\CodeSquirrel.RecipeApp.Model.csproj", "{A5239F63-4B57-47C5-9E47-B61B96F5F12F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeSquirrel.RecipeApp.Model", "..\CodeSquirrel.Recipe.Model\CodeSquirrel.RecipeApp.Model.csproj", "{A5239F63-4B57-47C5-9E47-B61B96F5F12F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeSquirrel.System", "..\CodeSquirrel.System\Code\CodeSquirrel.System.csproj", "{37CDFC24-513C-4452-BCD6-259BD3C6801F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeSquirrel.System", "..\CodeSquirrel.System\CodeSquirrel.System.csproj", "{37CDFC24-513C-4452-BCD6-259BD3C6801F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reference", "Reference", "{A50A65F8-0E64-4E58-8D77-5A0F688C1EEA}"
 EndProject

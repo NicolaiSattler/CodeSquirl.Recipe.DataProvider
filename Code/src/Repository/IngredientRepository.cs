@@ -31,7 +31,7 @@ namespace CodeSquirrel.RecipeApp.DataProvider.src.Repository
             Builder = new QueryBuilder(TABLE_NAME);
         }
         
-        private object[] GetParameters(IList<IngredientDTO> ingredients) => ingredients.Select(i => new
+        private object[] GetParameters(IEnumerable<IngredientDTO> ingredients) => ingredients.Select(i => new
             { 
                 i.UniqueID, 
                 i.ProductID, 
@@ -65,7 +65,7 @@ namespace CodeSquirrel.RecipeApp.DataProvider.src.Repository
                 _connection.Dispose();
             }
         }
-        public bool AddRange(IList<IngredientDTO> entities)
+        public bool AddRange(IEnumerable<IngredientDTO> entities)
         {
             var transaction = _connection.BeginTransaction();
 
